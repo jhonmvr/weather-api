@@ -7,12 +7,12 @@ import java.util.UUID;
 
 @Data
 public class WeatherHistoryDTO {
-    private UUID id;
-private Double lat;
-private Double lon;
-private String weather;
-private Double tempMin;
-private Double tempMax;
     Double humidity;
-private LocalDateTime created;
+    private UUID id;
+    private Double lat;
+    private Double lon;
+    private String weather;
+    private Double tempMin;
+    private Double tempMax;
+    private LocalDateTime created;
 }

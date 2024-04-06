@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class ResponseWeather {
-private  String weather;
-private  Double tempMin;
-private  Double tempMax;
-private  Double humidity;
+    private String weather;
+    private Double tempMin;
+    private Double tempMax;
+    private Double humidity;
 }

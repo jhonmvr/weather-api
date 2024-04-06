@@ -12,10 +12,10 @@ public class AuthService {
     private final TokenRequest tokenRequest;
 
     public AuthService(HttpClientsFactory clientsFactory,
-                            @Value("${app.secrets.oauth.client-id}") String clientId,
-                            @Value("${app.secrets.oauth.client-secret}") String clientSecret,
-                            @Value("${app.secrets.oauth.audience}") String audience,
-                            @Value("${app.secrets.oauth.grant-type}") String grantType) {
+                       @Value("${app.secrets.oauth.client-id}") String clientId,
+                       @Value("${app.secrets.oauth.client-secret}") String clientSecret,
+                       @Value("${app.secrets.oauth.audience}") String audience,
+                       @Value("${app.secrets.oauth.grant-type}") String grantType) {
         this.clientsFactory = clientsFactory;
         this.tokenRequest = new TokenRequest(clientId, clientSecret, audience, grantType);
     }

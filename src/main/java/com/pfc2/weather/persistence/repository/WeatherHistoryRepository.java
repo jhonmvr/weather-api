@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.UUID;
+
 @Repository
 public interface WeatherHistoryRepository extends JpaRepository<WeatherHistory, UUID> {
     Optional<WeatherHistory> findByLatAndLon(Double lat, Double lon);

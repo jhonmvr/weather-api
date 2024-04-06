@@ -8,8 +8,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 public class WeatherApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(WeatherApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WeatherApiApplication.class, args);
+    }
 
 }

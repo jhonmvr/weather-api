@@ -18,10 +18,17 @@ import java.util.UUID;
 public interface WeatherMapper {
     WeatherMapper INSTANCE = Mappers.getMapper(WeatherMapper.class);
 
+    @Named("getCurrentWeatherCondition")
+    static String getCurrentWeatherCondition(List<Weather> weather) {
+        if (weather != null && !weather.isEmpty()) {
+            return weather.get(0).getMain();
+        }
+        return "Unknown";
+    }
+
     ResponseWeather toResponseWeather(WeatherHistory history);
 
     WeatherHistoryDTO toWeatherHistoryDTO(WeatherHistory history);
-
 
     @Mapping(target = "id", expression = "java(UUID.randomUUID())")
     @Mapping(target = "tempMin", source = "main.tempMin")
@@ -32,12 +39,4 @@ public interface WeatherMapper {
     @Mapping(target = "created", expression = "java(LocalDateTime.now())")
     @Mapping(target = "weather", source = "weather", qualifiedByName = "getCurrentWeatherCondition")
     WeatherHistory toWeatherHistory(ApiOpenWeatherMapRes res);
-
-    @Named("getCurrentWeatherCondition")
-    static String getCurrentWeatherCondition(List<Weather> weather) {
-        if (weather != null && !weather.isEmpty()) {
-            return weather.get(0).getMain();
-        }
-        return "Unknown";
-    }
 }
